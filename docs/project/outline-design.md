@@ -101,7 +101,8 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 
 ### 功能1
 
-- **逻辑视图**采用UML类图来实现
+- **逻辑视图**采用UML类图来实现  
+ 
 (1)IssueSolveRecord部分
 ![逻辑视图1](./imgs/luojishitu1.png) 
 (2)Student部分
