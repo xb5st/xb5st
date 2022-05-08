@@ -268,8 +268,16 @@ update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
 ## 人机交互设计@HuYM
 
 ### 原型图
+
+1、登录界面：
 ![img](./imgs/yx-1.jpg)
-![img](./imgs/yx-2.jpg)
+
+2、课程列表
+![img](./img/yx-2.jpg)
+
+3、作业列表
 ![img](./imgs/yx-3.jpg)
+
+4、作业编辑器
 ![img](./imgs/yx-4.jpg)
->>>>>>> master
+
