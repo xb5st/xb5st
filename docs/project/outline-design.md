@@ -107,7 +107,7 @@ xxxxx
 ![img](./imgs/yx-1.jpg)
 
 2、课程列表
-![img](./img/yx-2.jpg)
+![img](./imgs/yx-2.jpg)
 
 3、作业列表
 ![img](./imgs/yx-3.jpg)
