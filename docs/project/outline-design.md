@@ -94,90 +94,96 @@ MYSQL 8.0.24
 
 表的设计包括以下内容：
 
-作业表：assignment
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-title               varchar   1       null       标题
-slave_id            int       0       无         课头id
-close               int       0       0          1到期0未到期
-end_time            datetime  0       无         deadline
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+作业表：assignment  
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |   
+| id   | int     |  0      |  自增  |  主键，自增1 |  
+|title | varchar |  1      | null   |    标题  |
+|slave_id |           int|       0|      无|         课头id|  
+|close|               int|       0|       0|          1到期0未到期|  
+|end_time|            datetime|  0|       无|         deadline|  
+|delete|              int|       0|       0|          逻辑删除| 
+|create_time|         datetime|  0|       当前时间戳|  插入时间| 
+|update_time|         datetime|  0|       当前时间戳|  更新时间| 
 
 课程表：course
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-name                varchar   1       null       名字
-outline             varchar   1       null       大纲
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id|                  int|       0|       自增|       主键，自增1|
+|name|                varchar|   1|       null|       名字|
+|outline|             varchar|   1|       null|       大纲|
+|delete|              int|       0|       0|          逻辑删除|
+|create_time|         datetime|  0|       当前时间戳|  插入时间|
+|update_time|         datetime|  0|       当前时间戳|  更新时间|
 
 问题表: issue
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-assignment_id       int       0       无         作业id
-index               int       0       无         序号
-content             varchar   1       null       内容
-goal                分值      0       0.0        分值
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id|                  int|       0|       自增|       主键，自增1|
+|assignment_id|       int|       0|       无 |        作业id|
+|index|               int|       0|       无 | |       序号|
+|content|             varchar|   1|       null |      内容|
+|goal|                分值|      0|       0.0 |       分值|
+|delete|              int|       0 |      0|          逻辑删除|
+|create_time|         datetime|  0|       当前时间戳|  插入时间|
+|update_time|         datetime|  0|       当前时间戳 | 更新时间|
 
 问题解答记录表:issue_solve_record
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-student_id          int       0       无         学生id
-issue_id            int       0       无         问题id
-content             varchar   1       null       内容
-correct             int       0       0          1已批改
-score               double    0       -1.00      得分
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id             |     int   |    0    |   自增    |   主键，自增1|
+|student_id    |      int  |     0   |    无    |     学生id|
+|issue_id      |      int   |    0   |    无   |      问题id|
+|content      |       varchar|   1   |    null  |     内容|
+|correct      |       int   |    0   |    0     |     1已批改|
+|score        |       double  |  0   |    -1.00 |     得分|
+|delete       |       int    |   0  |     0      |    逻辑删除|
+|create_time   |      datetime  |0  |     当前时间戳  |插入时间|
+|update_time   |      datetime | 0  |     当前时间戳 | 更新时间|
 
 课头表:slave
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-slave_number        varchar   0       无         课头号
-course_id           int       0       无         课程id
-teacher_id          int       0       无         老师id
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id     |             int  |     0   |    自增  |     主键，自增1|
+|slave_number |       varchar |  0  |     无  |       课头号|
+|course_id    |       int  |     0   |    无   |      课程id|
+|teacher_id   |       int  |     0  |     无   |      老师id|
+|delete      |        int  |     0 |      0       |   逻辑删除|
+|create_time   |      datetime | 0  |     当前时间戳 | 插入时间|
+|update_time  |       datetime | 0  |     当前时间戳 | 更新时间|
 
 学生表:student
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-student_number      varchar   0       无         学号
-name                varchar   0       无         姓名
-password            varchar   0       无         密码
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id         |         int     |  0 |      自增   |    主键，自增1|
+student_number|      varchar |  0  |     无    |     学号|
+name                varchar   0  |     无    |     姓名|
+password   |         varchar |  0  |     无     |    密码|
+delete     |         int     |  0  |     0      |    逻辑删除|
+create_time  |       datetime|  0    |   当前时间戳|  插入时间|
+update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
 
 选课表:student_slave
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-student_id          int       0       无         学生id
-slave_id            int       0       无         课头id
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id     |             int    |   0    |   自增   |    主键，自增1|
+student_id |         int   |    0   |    无    |     学生id|
+slave_id   |         int    |   0    |   无    |     课头id|
+delete     |         int    |   0   |    0     |     逻辑删除|
+create_time |        datetime | 0   |    当前时间戳  |插入时间|
+update_time  |       datetime | 0   |    当前时间戳  |更新时间|
 
 老师表:teacher
-字段                数据类型   是否可空 默认值     备注
-id                  int       0       自增       主键，自增1
-work_number         varchar   0       无         工号
-name                varchar   0       无         姓名
-password            varchar   0       无         密码
-delete              int       0       0          逻辑删除
-create_time         datetime  0       当前时间戳  插入时间
-update_time         datetime  0       当前时间戳  更新时间
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id       |           int    |   0    |   自增   |    主键，自增1|
+work_number    |     varchar |  0   |    无   |      工号|
+name        |        varchar |  0   |    无    |     姓名|
+password     |       varchar |  0   |    无   |      密码|
+delete       |       int     |  0   |    0       |   逻辑删除|
+create_time  |       datetime  |0   |    当前时间戳 | 插入时间|
+update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
 
-
-![img](https://hellowhu.feishu.cn/space/api/box/stream/download/asynccode/?code=ODFiYmE1OWY5OTdhOWMxNzg0YTliNDEwZTFhMjdjOTRfcmt2WndrWjBWdVhxcGFOTkNnWXo5SUM0NlJOZFZoMFdfVG9rZW46Ym94Y25ISjR0RHFnZEhkNzRZYnQ5SmFvUkFmXzE2NTE5MjY1NTk6MTY1MTkzMDE1OV9WNA)
 
 ## 人机交互设计@HuYM
 
