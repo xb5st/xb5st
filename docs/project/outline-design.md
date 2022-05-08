@@ -34,13 +34,14 @@ xxxxxx
 
 ## 关键技术与算法
 
-说明本系统中的主要技术与算法。
+说明本系统中的主要技术与算法。 
+
 
 ## 系统功能设计
 
 此部分主要对各关键功能进行设计，描述其实现方式。除了文字描述以外，需要辅以类图、顺序图等描述。 
 
-
+### 物理视图（UML配置图）
 studyhub项目采用了前后端分离的设计，前端为用户返回界面，而后端提供json形式的数据。其中系统的数据（用户信息，作业考试记录、答疑记录等）保存在后端服务器的数据库中。具体如以下配置图所示： 
 
 ![](./imgs/peizhitu.png)
@@ -62,9 +63,11 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 作业模块的主要操作是老师布置作业，学生完成作业，老师批改作业，学生查看批改情况。系统在这个过程中主要作用是帮助存储老师以及学生对作业进行的编辑，以及通知学生完成作业，还有老师批改作业等。具体见以下状态图和活动图： 
 
 作业模块状态图：
+
 ![](./imgs/zhuangtaitu3.png) 
 
 作业模块活动图：
+
 ![](./imgs/liuchengtu2.png)
 
 
@@ -73,9 +76,11 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 作业模块的主要操作是老师设计试卷，学生在规定时间内完成考试，老师改卷，学生查看分数。系统在这个过程中主要作用是帮助存储老师以及学生对试卷进行的编辑，以及通知学生完成考试，还有老师及时改卷等。具体见以下状态图和活动图： 
 
 考试模块状态图：
+
 ![](./imgs/zhuangtaitu2.png) 
 
 考试模块活动图: 
+
 ![](./imgs/liuchengtu1.png)
 
 ### 答疑论坛模块
@@ -87,6 +92,7 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 ![](./imgs/zhuangtaitu4.png) 
 
 答疑论坛模块活动图: 
+
 ![](./imgs/liuchengtu4.png)
 
 ### 期末汇总模块 
@@ -94,31 +100,21 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 期末汇总模块是系统根据学生的考试情况自动生成的报告，老师可以在课头下查看，并下载到本地。具体见以下状态图和活动图： 
 
 期末汇总模块状态图： 
+
 ![](./imgs/zhuangtaitu5.ong.png) 
 
 期末汇总模块活动图： 
+
 ![](./imgs/liuchengtu4.png)
 
-### 功能1
+
 
 - **逻辑视图**采用UML类图来实现
 - **开发视图**使用UML构件图来表示模块，用包来表示子系统，利用连接表示模块或子系统之间的关联
 - **过程视图**采用UML状态图、顺序图和活动图来实现
 - **物理视图**定义了功能单元的分布状况，描述用于执行用例和保存数据的业务地点，可以使用UML的配置图来实现
 
-### 功能2
 
-
-
-功能1：交作业
-
-![img](https://hellowhu.feishu.cn/space/api/box/stream/download/asynccode/?code=Y2VjNzEyOTUxYzVmMjY3OGM5MDA0NTUwYjEwZDNlYjdfakpKcWFJdHh4b0VGZ0FKY3VUcmo4enFsZUdDcGRIV3hfVG9rZW46Ym94Y240NzJKdTJLN2ZiNzRWdGpiNno2bGRjXzE2NTE5MjY1NTk6MTY1MTkzMDE1OV9WNA)
-
-
-
-### 功能3
-
-xxxxx
 
 ## 非功能性设计@Tianj
 
@@ -162,15 +158,18 @@ xxxxx
 - 备注，对字段的解释性说明：主键、外键、是否自动增一、是否为索引、是否唯一、是否进行数据检查等。主键是id，解释如下图
 
 1. 存储过程设计（若有）
-2. 触发器设计（若有）
+2. 触发器设计（若有） 
 
-![img](https://hellowhu.feishu.cn/space/api/box/stream/download/asynccode/?code=ODFiYmE1OWY5OTdhOWMxNzg0YTliNDEwZTFhMjdjOTRfcmt2WndrWjBWdVhxcGFOTkNnWXo5SUM0NlJOZFZoMFdfVG9rZW46Ym94Y25ISjR0RHFnZEhkNzRZYnQ5SmFvUkFmXzE2NTE5MjY1NTk6MTY1MTkzMDE1OV9WNA)
+![img](./imgs/shujuku.png)
 
 ## 人机交互设计@HuYM
 
-### 原型图
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-1.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-2.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-3.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-4.jpg)
->>>>>>> master
+### 原型图 
+
+![img](./imgs/yx-1.jpg) 
+
+![img](./imgs/yx-2.jpg) 
+
+![img](./imgs/yx-3.jpg) 
+
+![img](./imgs/yx-4.jpg) 
