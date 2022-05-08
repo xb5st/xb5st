@@ -102,10 +102,21 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 ### 功能1
 
 - **逻辑视图**采用UML类图来实现
-![](./imgs/luojishitu.png) 
+![逻辑视图1](./imgs/luojishitu1.png) 
+![逻辑视图2](./imgs/luojishitu2.png) 
+![逻辑视图3](./imgs/luojishitu3.png) 
+![逻辑视图4](./imgs/luojishitu4.png) 
+![逻辑视图5](./imgs/luojishitu5.png) 
+![逻辑视图6](./imgs/luojishitu6.png) 
+
 - **开发视图**使用UML构件图来表示模块，用包来表示子系统，利用连接表示模块或子系统之间的关联
 
-![](./imgs/kaifashitu.png) 
+![开发试图](./imgs/kaifashitu.png) 
+
+
+
+
+
 - **过程视图**采用UML状态图、顺序图和活动图来实现
 - **物理视图**定义了功能单元的分布状况，描述用于执行用例和保存数据的业务地点，可以使用UML的配置图来实现
 
