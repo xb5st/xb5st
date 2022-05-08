@@ -109,8 +109,28 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 
 
 
-- **逻辑视图**采用UML类图来实现
+- **逻辑视图**采用UML类图来实现  
+ 
+(1)IssueSolveRecord部分
+![逻辑视图1](./imgs/luojishitu1.png) 
+(2)Student部分
+![逻辑视图2](./imgs/luojishitu2.png) 
+(3)Teacher部分
+![逻辑视图3](./imgs/luojishitu3.png) 
+(4)Assignment部分
+![逻辑视图4](./imgs/luojishitu4.png) 
+(5)Issue部分
+![逻辑视图5](./imgs/luojishitu5.png) 
+
+
 - **开发视图**使用UML构件图来表示模块，用包来表示子系统，利用连接表示模块或子系统之间的关联
+
+![开发试图](./imgs/kaifashitu.png) 
+
+
+
+
+
 - **过程视图**采用UML状态图、顺序图和活动图来实现
 - **物理视图**定义了功能单元的分布状况，描述用于执行用例和保存数据的业务地点，可以使用UML的配置图来实现
 
@@ -140,15 +160,16 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 
 
 
-## 数据库设计
+## 数据库设计@Tianj
 
 ### 采用的数据库
 
-指明所采用的数据库管理系统，版本等必要信息。
+MYSQL 8.0.24
 
 ### 数据库表的设计
 
 表的设计包括以下内容：
+
 
 - 表名(中英文):
 - 字段名:
@@ -157,19 +178,120 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 - 字段的默认值：
 - 备注，对字段的解释性说明：主键、外键、是否自动增一、是否为索引、是否唯一、是否进行数据检查等。主键是id，解释如下图
 
-1. 存储过程设计（若有）
-2. 触发器设计（若有） 
+
 
 ![img](./imgs/shujuku.png)
 
+
+=======
+作业表：assignment  
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |   
+| id   | int     |  0      |  自增  |  主键，自增1 |  
+|title | varchar |  1      | null   |    标题  |
+|slave_id |           int|       0|      无|         课头id|  
+|close|               int|       0|       0|          1到期0未到期|  
+|end_time|            datetime|  0|       无|         deadline|  
+|delete|              int|       0|       0|          逻辑删除| 
+|create_time|         datetime|  0|       当前时间戳|  插入时间| 
+|update_time|         datetime|  0|       当前时间戳|  更新时间| 
+
+课程表：course
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id|                  int|       0|       自增|       主键，自增1|
+|name|                varchar|   1|       null|       名字|
+|outline|             varchar|   1|       null|       大纲|
+|delete|              int|       0|       0|          逻辑删除|
+|create_time|         datetime|  0|       当前时间戳|  插入时间|
+|update_time|         datetime|  0|       当前时间戳|  更新时间|
+
+问题表: issue
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id|                  int|       0|       自增|       主键，自增1|
+|assignment_id|       int|       0|       无 |        作业id|
+|index|               int|       0|       无 | |       序号|
+|content|             varchar|   1|       null |      内容|
+|goal|                分值|      0|       0.0 |       分值|
+|delete|              int|       0 |      0|          逻辑删除|
+|create_time|         datetime|  0|       当前时间戳|  插入时间|
+|update_time|         datetime|  0|       当前时间戳 | 更新时间|
+
+问题解答记录表:issue_solve_record
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id             |     int   |    0    |   自增    |   主键，自增1|
+|student_id    |      int  |     0   |    无    |     学生id|
+|issue_id      |      int   |    0   |    无   |      问题id|
+|content      |       varchar|   1   |    null  |     内容|
+|correct      |       int   |    0   |    0     |     1已批改|
+|score        |       double  |  0   |    -1.00 |     得分|
+|delete       |       int    |   0  |     0      |    逻辑删除|
+|create_time   |      datetime  |0  |     当前时间戳  |插入时间|
+|update_time   |      datetime | 0  |     当前时间戳 | 更新时间|
+
+课头表:slave
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+|id     |             int  |     0   |    自增  |     主键，自增1|
+|slave_number |       varchar |  0  |     无  |       课头号|
+|course_id    |       int  |     0   |    无   |      课程id|
+|teacher_id   |       int  |     0  |     无   |      老师id|
+|delete      |        int  |     0 |      0       |   逻辑删除|
+|create_time   |      datetime | 0  |     当前时间戳 | 插入时间|
+|update_time  |       datetime | 0  |     当前时间戳 | 更新时间|
+
+学生表:student
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id         |         int     |  0 |      自增   |    主键，自增1|
+student_number|      varchar |  0  |     无    |     学号|
+name                varchar   0  |     无    |     姓名|
+password   |         varchar |  0  |     无     |    密码|
+delete     |         int     |  0  |     0      |    逻辑删除|
+create_time  |       datetime|  0    |   当前时间戳|  插入时间|
+update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
+
+选课表:student_slave
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id     |             int    |   0    |   自增   |    主键，自增1|
+student_id |         int   |    0   |    无    |     学生id|
+slave_id   |         int    |   0    |   无    |     课头id|
+delete     |         int    |   0   |    0     |     逻辑删除|
+create_time |        datetime | 0   |    当前时间戳  |插入时间|
+update_time  |       datetime | 0   |    当前时间戳  |更新时间|
+
+老师表:teacher
+| 字段 | 数据类型 | 是否可空 | 默认值 | 备注 |  
+| :---:| :---:   | :---:   | :---:  | :---: |
+id       |           int    |   0    |   自增   |    主键，自增1|
+work_number    |     varchar |  0   |    无   |      工号|
+name        |        varchar |  0   |    无    |     姓名|
+password     |       varchar |  0   |    无   |      密码|
+delete       |       int     |  0   |    0       |   逻辑删除|
+create_time  |       datetime  |0   |    当前时间戳 | 插入时间|
+update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
+
+
 ## 人机交互设计@HuYM
 
-### 原型图 
 
-![img](./imgs/yx-1.jpg) 
+ 
 
-![img](./imgs/yx-2.jpg) 
+### 原型图
 
-![img](./imgs/yx-3.jpg) 
+1、登录界面：
+![img](./imgs/yx-1.jpg)
 
-![img](./imgs/yx-4.jpg) 
+2、课程列表
+![img](./imgs/yx-2.jpg)
+
+3、作业列表
+![img](./imgs/yx-3.jpg)
+
+4、作业编辑器
+![img](./imgs/yx-4.jpg)
+
+
