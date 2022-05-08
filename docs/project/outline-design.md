@@ -101,13 +101,19 @@ studyhub项目采用了前后端分离的设计，前端为用户返回界面，
 
 ### 功能1
 
-- **逻辑视图**采用UML类图来实现
+- **逻辑视图**采用UML类图来实现  
+ 
+(1)IssueSolveRecord部分
 ![逻辑视图1](./imgs/luojishitu1.png) 
+(2)Student部分
 ![逻辑视图2](./imgs/luojishitu2.png) 
+(3)Teacher部分
 ![逻辑视图3](./imgs/luojishitu3.png) 
+(4)Assignment部分
 ![逻辑视图4](./imgs/luojishitu4.png) 
+(5)Issue部分
 ![逻辑视图5](./imgs/luojishitu5.png) 
-![逻辑视图6](./imgs/luojishitu6.png) 
+
 
 - **开发视图**使用UML构件图来表示模块，用包来表示子系统，利用连接表示模块或子系统之间的关联
 
@@ -262,8 +268,8 @@ update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
 ## 人机交互设计@HuYM
 
 ### 原型图
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-1.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-2.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-3.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-4.jpg)
+![img](./imgs/yx-1.jpg)
+![img](./imgs/yx-2.jpg)
+![img](./imgs/yx-3.jpg)
+![img](./imgs/yx-4.jpg)
 >>>>>>> master
