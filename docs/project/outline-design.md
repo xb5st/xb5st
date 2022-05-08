@@ -103,7 +103,14 @@ xxxxx
 ## 人机交互设计@HuYM
 
 ### 原型图
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-1.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-2.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-3.jpg)
-![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-4.jpg)
+1、登录界面：
+![img](./imgs/yx-1.jpg)
+
+2、课程列表
+![img](./img/yx-2.jpg)
+
+3、作业列表
+![img](./imgs/yx-3.jpg)
+
+4、作业编辑器
+![img](./imgs/yx-4.jpg)
