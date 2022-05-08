@@ -273,7 +273,7 @@ update_time  |       datetime | 0   |    当前时间戳 | 更新时间|
 ![img](./imgs/yx-1.jpg)
 
 2、课程列表
-![img](./img/yx-2.jpg)
+![img](./imgs/yx-2.jpg)
 
 3、作业列表
 ![img](./imgs/yx-3.jpg)
