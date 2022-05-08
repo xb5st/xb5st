@@ -109,4 +109,7 @@ xxxxx
 ## 人机交互设计@HuYM
 
 ### 原型图
-
+![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-1.jpg)
+![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-2.jpg)
+![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-3.jpg)
+![img](https://github.com/NRISRcd/xb5st/blob/master/docs/project/imgs/yx-4.jpg)
