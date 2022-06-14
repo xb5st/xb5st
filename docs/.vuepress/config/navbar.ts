@@ -13,7 +13,7 @@ export const navbar: NavbarConfig = [
             //     link: '/project/overview'
             // },
             {
-                text: '软件计划文档',
+                text: '项目计划',
                 link: '/project/plan'
             },
             {
@@ -23,6 +23,10 @@ export const navbar: NavbarConfig = [
             {
                 text: '概要设计',
                 link: '/project/outline-design'
+            },
+            {
+                text: '测试计划',
+                link: '/project/test-plan'
             }
         ]
     },

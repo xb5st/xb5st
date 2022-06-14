@@ -1,6 +1,7 @@
 import { DefaultThemeOptions, defineUserConfig } from "vuepress";
 import { navbar } from "./config/navbar";
 import { sidebar } from "./config/sidebar";
+import { mermaidPlugin } from "./plugins/mermaid";
 
 export default defineUserConfig<DefaultThemeOptions>({
     base: '/',
@@ -19,6 +20,9 @@ export default defineUserConfig<DefaultThemeOptions>({
                     },
                 },
             },
+        ],
+        [
+            mermaidPlugin
         ],
     ],
     themeConfig: {
