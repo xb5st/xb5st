@@ -11,6 +11,9 @@ actions:
     type: secondary
   - text: 概要设计
     link: /project/outline-design
+    type: secondary
+  - text: 测试计划
+    link: /project/test-plan
     type: primary
 features:
 #   - title: 特性

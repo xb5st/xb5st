@@ -30,4 +30,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         // sidebar: sidebar,
         logo: '/images/studying.png',
     },
+    bundler: '@vuepress/vite',
+    bundlerConfig: {
+      viteOptions: {
+        configFile: 'vite.config.ts',
+      },
+    },
 });
